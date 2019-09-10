@@ -4,8 +4,16 @@ import './Login.css'
 function LoginForm(){
     return(
         <div>
-            <h1>Login form</h1>
+            <div>
+            <span>username</span>
             <input></input>
+
+            </div>
+            <div>
+            <span>password</span>
+            <input></input>
+
+            </div>
         </div>
     )
 }
