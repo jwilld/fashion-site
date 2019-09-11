@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import LoginForm from "../acccess-forms/Login"
+import RegisterForm from "../acccess-forms/Register"
 
 function LandingPage() {
   const [loggedIn, setLoggedIn] = useState(true)
@@ -25,6 +26,7 @@ function LandingPage() {
         :
         null
       }
+      <RegisterForm/>
     </div>
   );
 }

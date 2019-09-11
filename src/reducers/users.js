@@ -7,6 +7,15 @@ const DEFAULT_STATE = {
 export default function userReducer(state = DEFAULT_STATE, action) {
     switch (action.type) {
         case CREATE_USER:
+            async function createUser(){
+                await axios
+                    .post('http://localhost:9000/register.php'),{
+                        first_name: action.payload.first_name,
+                        last_name: action.payload.last_name,
+                        email: action.payload.email,
+                        password: action.payload.password
+                    }
+            }
             return { ...state, users: [...state.users, action.payload] };
         case REMOVE_USER:
             return {
