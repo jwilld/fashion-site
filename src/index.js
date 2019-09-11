@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from "react-redux"
+import store from './store/store'
+import {createNewPost } from './actions/posts'
 
-ReactDOM.render(<Router><App /></Router>,document.getElementById('root'));
+console.log(store.getState())
+store.dispatch(createNewPost('firstpicture','Jerry','Washington D.C.'))
+console.log(store.getState())
+store.dispatch(createNewPost('secondpicture','William','Washington D.C.'))
+console.log(store.getState())
+store.dispatch(createNewPost('thirdpicture','Davidson','Washington D.C.'))
+console.log(store.getState())
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Provider store={store}>
+    <Router><App /></Router>
+    </Provider>,document.getElementById('root'));
+
+
