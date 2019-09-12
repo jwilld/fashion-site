@@ -1,3 +1,7 @@
 export const CREATE_USER = 'CREATE_USER '
 export const REMOVE_USER = 'REMOVE_USER'
 export const UPDATE_USER = 'UPDATE_USER'
+export const MAKE_USER_SUCCESS = 'MAKE_USER_SUCCESS'
+export const MAKE_USER_STARTED = 'MAKE_USER_STARTED'
+export const MAKE_USER_FAILURE = 'MAKE_USER_STARTED'
+export const MAKE_USER = 'MAKE_USER'

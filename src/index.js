@@ -5,15 +5,13 @@ import './index.css';
 import App from './App';
 import { Provider } from "react-redux"
 import store from './store/store'
-import {createNewPost } from './actions/posts'
 
-console.log(store.getState())
-store.dispatch(createNewPost('firstpicture','Jerry','Washington D.C.'))
-console.log(store.getState())
-store.dispatch(createNewPost('secondpicture','William','Washington D.C.'))
-console.log(store.getState())
-store.dispatch(createNewPost('thirdpicture','Davidson','Washington D.C.'))
-console.log(store.getState())
+import { createUser } from './actions/users'
+
+store.subscribe(() => console.log(store.getState()));
+store.dispatch(createUser({first_name:'terer',last_name:'sfefaesf',email:'aewfaef',password:'aefweaf'}))
+
+
 
 ReactDOM.render(<Provider store={store}>
     <Router><App /></Router>
