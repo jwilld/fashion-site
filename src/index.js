@@ -6,10 +6,10 @@ import App from './App';
 import { Provider } from "react-redux"
 import store from './store/store'
 
-import { createUser } from './actions/users'
+import { makeUser } from './actions/users'
 
 store.subscribe(() => console.log(store.getState()));
-store.dispatch(createUser({first_name:'terer',last_name:'sfefaesf',email:'aewfaef',password:'aefweaf'}))
+store.dispatch( makeUser({first_name:'Jerry',last_name:'Davidson',email:'willdjerry@gmail.com',password:'password1'}))
 
 
 
