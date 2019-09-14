@@ -1,37 +1,38 @@
-import React, {useState} from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import LoginForm from "../acccess-forms/Login"
 import RegisterForm from "../acccess-forms/Register"
+import { connect } from 'react-redux';
 
-
-function LandingPage() {
-  const [loggedIn, setLoggedIn] = useState(true)
-  const [homeAccess,setHomeAccess] = useState('')
-
-
-
-  const goToHome = (() =>{
-    setLoggedIn(!loggedIn)
-    setHomeAccess('/home')
-  });
-  return (
-    <div className="landing-container">
-      <div className="website-title">
-        <Link className='website-title-text' to={homeAccess} onClick={goToHome} >
-          <h1>trnd</h1>
-        </Link>
-      </div>
-      {loggedIn === false ?
-        <div className= 'login-container'>
-          <LoginForm/>
+class LandingPage extends Component {
+  render() {
+    console.log(this.props)
+    return (
+      <div className="landing-container">
+        <div className="website-title">
+          <Link to = 'homes'className='website-title-text'>
+            <h1>trnd</h1>
+          </Link>
         </div>
-        :
-        null
-      }
-      <RegisterForm/>
-    </div>
-  );
+        {this.props.data.isRegistered === false ?
+          null
+          :
+          <div className='login-container'>
+            <LoginForm />
+          </div>
+
+        }
+        <RegisterForm />
+      </div>
+    );
+  }
 }
 
-export default LandingPage;
+
+const mapStateToProps = state => {
+  return {
+    data: state
+  };
+};
+export default connect(mapStateToProps)(LandingPage);
