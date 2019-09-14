@@ -17,21 +17,21 @@ class RegisterForm extends Component {
         let form = new FormData(e.target)
         let newUser = {}
         this.state.formFields.forEach(field => newUser[field] = form.get(field))
-        // this.props.dispatch(user_creator(newUser));
+        this.props.dispatch(user_creator(newUser));
         document.getElementById('register-form').reset();
         
 
         
     }  
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         const formFields = this.state.formFields
         // takes the input from the form to give to the store and API
         // maps the formFields to make the input form 
-        let form = formFields.map(field => (
+        let form = formFields.map((field, i) => (
             // remember to use " name "  so the data can be selected with form
-            <div>
-                <span>{field}</span>
+            <div key ={i}>
+                <span >{field}</span>
 
                 <input name={field} ></input>
             </div>
