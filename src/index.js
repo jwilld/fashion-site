@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
 import store from './store/store'
-import { user_creator } from './actions/actions'
+// import { user_creator } from './actions/actions'
 
 
 // store.dispatch(user_creator({first_name: 'jerry', last_name:'davidson',email:'email@email.com',password:'password1'}))
