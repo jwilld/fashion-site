@@ -1,10 +1,16 @@
+
+
 const initialState = {
     userData: {},
     isFetching: false,
     isError: false,
     isRegistered: false,
+    signUp: false,
+    login: false,
+    showAccess: false,
     formFields: ['first_name', 'last_name', 'email', 'password']
 };
+
 
 
 
@@ -31,6 +37,23 @@ const asyncReducer = (state = initialState, action) => {
                 isFetching: false,
                 isRegistered: false
             })
+        case "SIGN_UP_BOOL":
+            return Object.assign({}, state, {
+                signUp: !state.signUp,
+                login: false
+            })
+        case "LOGIN_BOOL":
+            return Object.assign({}, state, {
+                login: !state.login,
+                signUp: false
+            })
+        case "SHOW_ACCESS":
+            return Object.assign({}, state, {
+                showAccess:!state.showAccess,
+                login: false,
+                signUp: false
+            })
+
         default:
             return state;
     }

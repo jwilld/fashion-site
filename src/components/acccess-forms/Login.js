@@ -1,6 +1,7 @@
 import React from 'react'
 import './Login.css'
 
+
 function LoginForm(){
     return(
         <div>
@@ -12,8 +13,8 @@ function LoginForm(){
             <div>
             <span>password</span>
             <input></input>
-
             </div>
+
         </div>
     )
 }
