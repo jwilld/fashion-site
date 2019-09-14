@@ -1,11 +1,13 @@
-import { createStore,applyMiddleware } from 'redux'
-import userReducer from '../reducers/users'
-import thunk  from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
+import asyncReducer from '../reducers/index';
+import thunk from 'redux-thunk';
 
 
 
-export default createStore(
-    userReducer,
+
+const store = createStore(
+    asyncReducer,
     applyMiddleware(thunk)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+);
+
+export default store;
