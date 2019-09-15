@@ -21,7 +21,9 @@ class LandingPage extends Component {
     this.props.dispatch(sign_up())
   }
 
+
   render() {
+
     console.log(this.props)
     return (
 
@@ -33,7 +35,7 @@ class LandingPage extends Component {
           </Link>
           {
           
-            this.props.data.showAccess === true ?
+            this.props.data.showAccess === false ?
             null
             :
           <div>
