@@ -52,15 +52,15 @@ export const login_failure = () => {
 export const login_user = user => {
     store.dispatch(login_start());
     return function (dispatch, getState) {
-        return axios.post('http://localhost:9000/login.php',user)
-        .then(response => {
-            if(response.data.message === 'Successful login.'){
-                dispatch(login_success())
-            }
-            else{
-                dispatch(login_failure())
-            }
-        })
+        return axios.post('http://localhost:9000/login.php', user)
+            .then(response => {
+                if (response.data.message === 'Successful login.') {
+                    dispatch(login_success())
+                }
+                else {
+                    dispatch(login_failure())
+                }
+            })
         // .catch(e => dispatch(login_failure()));
     }
 }
@@ -82,34 +82,62 @@ export const showAccess = () => {
 }
 
 export const send_post = () => {
-    return{
+    return {
         type: "SEND_POST"
     }
 }
 export const post_accepted = () => {
-    return{
+    return {
         type: "POST_ACCEPTED"
     }
 }
 export const post_denied = () => {
-    return{
+    return {
         type: "POST_DENIED"
     }
 }
 
-export const make_post = post =>{
+export const make_post = post => {
     store.dispatch(send_post());
-    return function (dispatch,getState) {
-        return axios.post('http://localhost:9000/post.php',post)
-        .then(response => {
-          if(response.data.message === 'post success') {
-              store.dispatch(post_accepted())
-          }
-          else{
-              store.dispatch(post_denied())
-          }
-        }).catch(store.dispatch(post_denied()))
+    return function (dispatch, getState) {
+        return axios.post('http://localhost:9000/post.php', post)
+            .then(response => {
+                if (response.data.message === 'post success') {
+                    dispatch(post_accepted())
+                }
+                else {
+                    dispatch(post_denied())
+                }
+            }).catch(dispatch(post_denied()))
     }
 }
+
+export const get_images = () => {
+    return {
+        type: "GET_START"
+    }
+}
+export const get_images_success = (data) => {
+    return {
+        type: "GET_SUCCESS",
+        posts:data
+    }
+}
+export const get_images_fail = () => {
+    return {
+        type: "GET_FAIL"
+    }
+}
+
+export const get_posts = () => {
+    store.dispatch(get_images());
+    return function (dispatch, getState) {
+        return axios.get('http://localhost:9000/getPosts.php')
+            .then(response => {
+                dispatch(get_images_success(response))
+            }).catch(dispatch(get_images_fail()));
+    }
+}
+
 
 

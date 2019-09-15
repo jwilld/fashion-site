@@ -14,7 +14,11 @@ const initialState = {
     postSuccess: false,
     formFields: ['first_name', 'last_name', 'email', 'password'],
     loginFields: ['email','password'],
-    postFields: ['title','photographer','photo','area']
+    postFields: ['title','photographer','photo','area'],
+    posts:{},
+    postFetching: false,
+    postFetched: false,
+    postFetchError: false
 };
 
 
@@ -94,6 +98,25 @@ const asyncReducer = (state = initialState, action) => {
                 postSuccess: false
                 
             })
+
+        case "GET_START":{
+            return Object.assign({}, state, {
+                postFetching: true
+            })
+        }
+        case "GET_SUCCESS":{
+            return Object.assign({}, state, {
+                postFetching: false,
+                postFetched: true,
+                posts: action.posts.data
+            })
+        }
+        case "GET_FAIL":{
+            return Object.assign({}, state, {
+                postFetching: false,
+                postFetchError: true
+            })
+        }
         default:
             return state;
     }
