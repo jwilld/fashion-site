@@ -21,20 +21,14 @@ class LandingPage extends Component {
     this.props.dispatch(sign_up())
   }
 
-
   render() {
-
-    console.log(this.props)
     return (
-
       <div className="landing-container">
         <div className="website-title">
-          
           <Link onClick = {this.showAccessForms}to = ''className='website-title-text'>
             <h1>trnd</h1>
           </Link>
           {
-          
             this.props.data.showAccess === false ?
             null
             :
@@ -42,8 +36,6 @@ class LandingPage extends Component {
             <h5 onClick={this.showLogin}>login</h5>
             <h5 onClick={this.showSignUp}>sign up</h5>
           </div>
-          
-          
           }
         </div>
         {this.props.data.signUp === false ?
@@ -60,7 +52,6 @@ class LandingPage extends Component {
           <div className='login-container'>
             <LoginForm/>
           </div>
-
         }
       </div>
     );

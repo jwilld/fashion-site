@@ -14,7 +14,6 @@ class LoginForm extends Component {
         loginFields.forEach(field => 
             loginCred[field] = form.get(field))
         this.props.dispatch(login_user(loginCred));
-        console.log(loginCred)
         document.getElementById('login-form').reset();
     }
 

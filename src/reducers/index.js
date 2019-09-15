@@ -9,8 +9,12 @@ const initialState = {
     signUp: false,
     login: false,
     showAccess: false,
+    postSent: false,
+    postError: false,
+    postSuccess: false,
     formFields: ['first_name', 'last_name', 'email', 'password'],
-    loginFields: ['email','password']
+    loginFields: ['email','password'],
+    postFields: ['title','photographer','photo','area']
 };
 
 
@@ -68,6 +72,27 @@ const asyncReducer = (state = initialState, action) => {
         case "LOGIN_FAILURE":
             return Object.assign({}, state, {
                 isLoggedIn: false
+            })
+        case "SEND_POST":
+            return Object.assign({}, state, {
+                postSent: true,
+                postError: false,
+                postSuccess: false
+                
+            })
+        case "POST_ACCEPTED":
+            return Object.assign({}, state, {
+                postSent: true,
+                postError: false,
+                postSuccess: true
+                
+            })
+        case "POST_DENIED":
+            return Object.assign({}, state, {
+                postSent: true,
+                postError: true,
+                postSuccess: false
+                
             })
         default:
             return state;

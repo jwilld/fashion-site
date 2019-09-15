@@ -1,23 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Nav.css";
+import { connect } from 'react-redux';
 
-function Nav() {
-  return (
+
+class Nav extends Component {
+  render() {
+  return(
     <div className="nav">
       <div className="username">
         <h2>UserName</h2>
       </div>
-      {/* <div className="home-button">
-        <h2>Home</h2>
-      </div> */}
-      {/* <div className="temp-nav-one">
-        <h2>temp</h2>
-      </div>
-      <div className="temp-nav-two">
-        <h2>temp</h2>
-      </div> */}
     </div>
-  );
+    );
+  }
 }
 
-export default Nav;
+const mapStateToProps = state => {
+  return {
+    data: state
+  }
+}
+
+export default connect(mapStateToProps)(Nav);

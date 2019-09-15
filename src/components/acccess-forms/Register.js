@@ -4,13 +4,6 @@ import { connect } from 'react-redux';
 import { user_creator } from "../../actions/actions"
 
 class RegisterForm extends Component {s
-    // constructor(){
-    //     super();
-    //     this.state ={
-    //         formFields:['first_name', 'last_name', 'email', 'password']
-    //     }
-    // }
-
 
     handleSubmit = e => {
         e.preventDefault();
@@ -24,7 +17,6 @@ class RegisterForm extends Component {s
         
     }  
     render() {
-        console.log(this.props)
         const formFields = this.props.data.formFields
         // takes the input from the form to give to the store and API
         // maps the formFields to make the input form 

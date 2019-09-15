@@ -81,4 +81,35 @@ export const showAccess = () => {
     }
 }
 
+export const send_post = () => {
+    return{
+        type: "SEND_POST"
+    }
+}
+export const post_accepted = () => {
+    return{
+        type: "POST_ACCEPTED"
+    }
+}
+export const post_denied = () => {
+    return{
+        type: "POST_DENIED"
+    }
+}
+
+export const make_post = post =>{
+    store.dispatch(send_post());
+    return function (dispatch,getState) {
+        return axios.post('http://localhost:9000/post.php',post)
+        .then(response => {
+          if(response.data.message === 'post success') {
+              store.dispatch(post_accepted())
+          }
+          else{
+              store.dispatch(post_denied())
+          }
+        }).catch(store.dispatch(post_denied()))
+    }
+}
+
 
