@@ -23,9 +23,9 @@ class RegisterForm extends Component {s
         let form = formFields.map((field, i) => (
             // remember to use " name "  so the data can be selected with form
             <div key ={i}>
-                <span >{field}</span>
+                <span className='field-label' >{field}</span>
 
-                <input name={field} ></input>
+                <input className='register-input' name={field} ></input>
             </div>
         ))
         return (
@@ -33,7 +33,7 @@ class RegisterForm extends Component {s
                 <div onSubmit={this.handleSubmit}>
                     <form id ='register-form'>
                         {form}
-                        <input type='submit' />
+                        <input className='submit-button' type='submit' />
                     </form>
                 </div>
             </div>

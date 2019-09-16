@@ -1,0 +1,15 @@
+.go-home{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.729);
+    color: white;
+    transition: 1s;
+}
+
+.go-home:hover{
+    transition: 1s;
+    color: black;
+    background-color: rgba(255, 0, 0, 0.461);
+}
+

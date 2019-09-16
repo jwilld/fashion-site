@@ -6,7 +6,6 @@ import { get_posts } from '../../actions/actions'
 class TrndDisplay extends Component {
     componentDidMount(){
         this.props.dispatch(get_posts())
-        console.log(this.props.data.posts)
     }
     render() {
         let posts = this.props.data.posts

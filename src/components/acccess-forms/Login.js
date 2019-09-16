@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 class LoginForm extends Component {
+
     handleSubmit = e => {
         const loginFields = this.props.data.loginFields
         e.preventDefault();
@@ -15,13 +16,14 @@ class LoginForm extends Component {
             loginCred[field] = form.get(field))
         this.props.dispatch(login_user(loginCred));
         document.getElementById('login-form').reset();
+        
     }
 
     render() {
         const loginFields = this.props.data.loginFields;
         let loginForm = loginFields.map((field, i ) => (
             <div key={i}>
-                <span>{field}</span>
+                <span className='field-label'>{field}</span>
                 <input name={field}></input>
             </div>
         ))
@@ -29,10 +31,10 @@ class LoginForm extends Component {
             <div onSubmit={this.handleSubmit}>
                 <form id='login-form'>
                     {loginForm}
-                    <input type='submit'/>
+                    <input className='submit-button' type='submit'/>
                 </form>
-                <Link to='/home'>
-                    go home
+                <Link  className='go-home' to='/home'>
+                    Go to home page
                 </Link>
 
             </div>

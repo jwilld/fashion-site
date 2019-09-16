@@ -22,20 +22,19 @@ class LandingPage extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="landing-container">
         <div className="website-title">
           <Link onClick = {this.showAccessForms}to = ''className='website-title-text'>
-            <h1>trnd</h1>
+            <h1 className='website-title-text'>trnd</h1>
           </Link>
           {
             this.props.data.showAccess === false ?
             null
             :
-          <div>
-            <h5 onClick={this.showLogin}>login</h5>
-            <h5 onClick={this.showSignUp}>sign up</h5>
+          <div className='access-buttons'>
+            <h5  className='login-button' onClick={this.showLogin}>login</h5>
+            <h5  className='signup-button' onClick={this.showSignUp}>sign up</h5>
           </div>
           }
         </div>

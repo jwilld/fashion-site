@@ -23,7 +23,7 @@ export const user_rejected = () => {
 export const user_creator = user => {
     store.dispatch(submit_user());
     return function (dispatch, getState) {
-        return axios.post('http://localhost:9000/register.php', user)
+        return axios.post('https://fashion-api2.herokuapp.com/register.php', user)
             .then(data => {
             })
             .then(dispatch(user_accepted(user)))
@@ -53,7 +53,7 @@ export const login_failure = () => {
 export const login_user = user => {
     store.dispatch(login_start());
     return function (dispatch, getState) {
-        return axios.post('http://localhost:9000/login.php', user)
+        return axios.post('https://fashion-api2.herokuapp.com/login.php', user)
             .then(response => {
                 if (response.data.message === 'Successful login.') {
                     dispatch(login_success(response.data.firstname))
@@ -101,7 +101,7 @@ export const post_denied = () => {
 export const make_post = post => {
     store.dispatch(send_post());
     return function (dispatch, getState) {
-        return axios.post('http://localhost:9000/post.php', post)
+        return axios.post('https://fashion-api2.herokuapp.com/posts.php', post)
             .then(response => {
                 if (response.data.message === 'post success') {
                     dispatch(post_accepted())
@@ -133,10 +133,12 @@ export const get_images_fail = () => {
 export const get_posts = () => {
     store.dispatch(get_images());
     return function (dispatch, getState) {
-        return axios.get('http://localhost:9000/getPosts.php')
+        return axios.get('https://fashion-api2.herokuapp.com/getPosts.php')
             .then(response => {
                 dispatch(get_images_success(response))
-            }).catch(dispatch(get_images_fail()));
+                
+            })
+            .catch(dispatch(get_images_fail()));
     }
 }
 

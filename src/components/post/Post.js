@@ -26,7 +26,7 @@ class Post extends Component {
         let formFields = this.props.data.postFields
         let postForm = formFields.map((field,i ) => (
             <div key={i}>
-                <span>{field}</span>
+                <span className='field-label'>{field}</span>
                 <input name={field}></input>
             </div>
         ))
@@ -35,7 +35,7 @@ class Post extends Component {
                 <h1> POST </h1>
                 <form id ='post-form'>
                     {postForm}
-                    <input type='submit'></input>
+                    <input className='submit-button' type='submit'></input>
                 </form>
             </div>
         )

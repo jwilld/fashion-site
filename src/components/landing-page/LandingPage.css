@@ -12,6 +12,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s;
+}
+.website-title-text:hover{
+    transition: 1s;
+    color: rgba(128, 128, 128, 0.578);
 }
 
 .website-title-text{
@@ -20,9 +25,32 @@
 }
 
 .login-container{
-    grid-row: 2;
-    grid-column:3;
+    grid-row: 3;
+    grid-column:2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.access-buttons{
+    grid-row:2;
+    grid-column: 3;
+    font-size: 20px;
+}
+
+.login-button{
+    transition: 1s;
+}
+
+.login-button:hover{
+    transition: 1s;
+    color: rgba(128, 128, 128, 0.578);
+}
+.signup-button{
+    transition: 1s;
+}
+
+.signup-button:hover{
+    transition: 1s;
+    color: rgba(128, 128, 128, 0.578);
 }

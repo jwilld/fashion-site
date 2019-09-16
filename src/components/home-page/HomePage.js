@@ -8,20 +8,19 @@ import Post from '../post/Post'
 
 class HomePage extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="home-page">
 
-        {/* {
+        {
           this.props.data.isLoggedIn === false ?
           <Redirect to ='/'/>
           :
           null
-        } */}
+        }
         <div className="top-container">
           <div className="homepage-title">
             <Link to='/' className='title-nav-text'>
-              <h2>trnd</h2>
+              <h2 className='website-title-text'>trnd</h2>
             </Link>
           </div>
           <div className="nav-container">
