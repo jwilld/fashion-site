@@ -8,7 +8,7 @@ class Nav extends Component {
   return(
     <div className="nav">
       <div className="username">
-        <h2>UserName</h2>
+        <h2>{this.props.data.userFirstName}</h2>
       </div>
     </div>
     );

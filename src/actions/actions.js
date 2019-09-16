@@ -25,7 +25,6 @@ export const user_creator = user => {
     return function (dispatch, getState) {
         return axios.post('http://localhost:9000/register.php', user)
             .then(data => {
-                console.log(data)
             })
             .then(dispatch(user_accepted(user)))
             .catch(e => dispatch(user_rejected()));
@@ -37,9 +36,11 @@ export const login_start = () => {
         type: "LOGIN_START"
     }
 }
-export const login_success = () => {
+export const login_success = (name) => {
     return {
-        type: "LOGIN_SUCCESS"
+        type: "LOGIN_SUCCESS",
+        name:name
+
     }
 }
 
@@ -55,13 +56,13 @@ export const login_user = user => {
         return axios.post('http://localhost:9000/login.php', user)
             .then(response => {
                 if (response.data.message === 'Successful login.') {
-                    dispatch(login_success())
+                    dispatch(login_success(response.data.firstname))
                 }
                 else {
                     dispatch(login_failure())
                 }
             })
-        // .catch(e => dispatch(login_failure()));
+        .catch(e => dispatch(login_failure()));
     }
 }
 

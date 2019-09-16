@@ -18,7 +18,8 @@ const initialState = {
     posts:[{photo:'default'}],
     postFetching: false,
     postFetched: false,
-    postFetchError: false
+    postFetchError: false,
+    userFirstName:'',
 };
 
 
@@ -70,7 +71,8 @@ const asyncReducer = (state = initialState, action) => {
             })
         case "LOGIN_SUCCESS":
             return Object.assign({}, state, {
-                isLoggedIn: true
+                isLoggedIn: true,
+                userFirstName:action.name
             })
 
         case "LOGIN_FAILURE":
