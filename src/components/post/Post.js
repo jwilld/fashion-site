@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import './Post.css'
 import { connect } from 'react-redux'
 import { make_post } from '../../actions/actions'
+import { get_posts } from '../../actions/actions'
 
 
 class Post extends Component {
@@ -11,6 +13,10 @@ class Post extends Component {
         let post = {}
         formFields.forEach(field => post[field] = form.get(field))
         this.props.dispatch(make_post(post))
+        .then(
+            this.props.dispatch(get_posts())
+            .catch(e => console.log(e))
+        )
         document.getElementById('post-form').reset()
 
     }
@@ -25,7 +31,7 @@ class Post extends Component {
             </div>
         ))
         return (
-            <div onSubmit={this.handleSubmit}>
+            <div className='post-container' onSubmit={this.handleSubmit}>
                 <h1> POST </h1>
                 <form id ='post-form'>
                     {postForm}

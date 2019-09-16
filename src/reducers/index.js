@@ -15,7 +15,7 @@ const initialState = {
     formFields: ['first_name', 'last_name', 'email', 'password'],
     loginFields: ['email','password'],
     postFields: ['title','photographer','photo','area'],
-    posts:{},
+    posts:[{photo:'default'}],
     postFetching: false,
     postFetched: false,
     postFetchError: false

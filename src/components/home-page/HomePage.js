@@ -26,12 +26,12 @@ class HomePage extends Component {
           </div>
           <div className="nav-container">
             <Nav />
-            <Post/>
           </div>
         </div>
         <div className="trnd-container">
-          <TrndDisplay />
+          <TrndDisplay className='trnd-grid'/>
         </div>
+            <Post className='post-form'/>
         </div>
         );
       }
