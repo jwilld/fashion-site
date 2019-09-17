@@ -5,6 +5,11 @@
 
 TRND is a fashion site where only certain users will be able to post their style. 
 
+# Example
+
+![alt text](https://i.imgur.com/b5JYFmA.png)
+
+
 
 ## Installation Instructions
 - Fork and clone this repo
