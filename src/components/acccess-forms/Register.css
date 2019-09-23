@@ -14,3 +14,12 @@
     transition: 1s;
     color: black;
 }
+
+.register-input{
+    height: 2em;
+    margin-left: 2em;
+}
+
+.form-field{
+    text-align: right;
+}

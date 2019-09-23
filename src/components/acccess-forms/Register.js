@@ -22,7 +22,7 @@ class RegisterForm extends Component {s
         // maps the formFields to make the input form 
         let form = formFields.map((field, i) => (
             // remember to use " name "  so the data can be selected with form
-            <div key ={i}>
+            <div key ={i} className='form-field'>
                 <span className='field-label' >{field}</span>
 
                 <input className='register-input' name={field} ></input>
