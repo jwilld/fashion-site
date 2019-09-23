@@ -25,18 +25,21 @@ class Post extends Component {
     render() {
         let formFields = this.props.data.postFields
         let postForm = formFields.map((field,i ) => (
-            <div key={i}>
+            <div className='post' key={i}>
                 <span className='field-label'>{field}</span>
-                <input name={field}></input>
+                <input className='post-input' name={field}></input>
             </div>
         ))
         return (
             <div className='post-container' onSubmit={this.handleSubmit}>
                 <h1> POST </h1>
+                <div className='post-form-container'>
                 <form id ='post-form'>
                     {postForm}
                     <input className='submit-button' type='submit'></input>
                 </form>
+
+                </div>
             </div>
         )
     }

@@ -33,8 +33,8 @@ class LandingPage extends Component {
             null
             :
           <div className='access-buttons'>
-            <span  className='login-button' onClick={this.showLogin}>Log In</span>
-            <span  className='signup-button' onClick={this.showSignUp}>Sign Up</span>
+            <span  className='login-button' onClick={this.showLogin}>log in</span>
+            <span  className='signup-button' onClick={this.showSignUp}>sign up</span>
           </div>
           }
         </div>

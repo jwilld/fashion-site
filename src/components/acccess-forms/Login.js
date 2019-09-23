@@ -22,9 +22,9 @@ class LoginForm extends Component {
     render() {
         const loginFields = this.props.data.loginFields;
         let loginForm = loginFields.map((field, i ) => (
-            <div key={i}>
+            <div key={i} className='form-field'>
                 <span className='field-label'>{field}</span>
-                <input name={field}></input>
+                <input className='register-input' name={field}></input>
             </div>
         ))
         return (
