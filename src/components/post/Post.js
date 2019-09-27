@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './Post.css'
 import { connect } from 'react-redux'
-import { make_post } from '../../actions/actions'
-import { get_posts } from '../../actions/actions'
+import { make_post,get_posts } from '../../actions/actions'
 
 
 class Post extends Component {
