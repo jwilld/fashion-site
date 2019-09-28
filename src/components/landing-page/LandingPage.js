@@ -24,34 +24,46 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="landing-container">
-        <div className="website-title">
-          <Link onClick = {this.showAccessForms}to = ''className='website-title-text'>
-            <h1 className='website-title-text'>trnd</h1>
-          </Link>
-          {
-            this.props.data.showAccess === false ?
-            null
-            :
-          <div className='access-buttons'>
-            <span  className='login-button' onClick={this.showLogin}>log in</span>
-            <span  className='signup-button' onClick={this.showSignUp}>sign up</span>
+        <div className="website-background">
+
+          <div className='trnd-title'>
+            <div>
+              <span>trnd</span>
+            </div>
           </div>
-          }
+
+          <div className='trnd-description'>
+            <div>
+              <p>TRND is a fashion swebsite that catches the latest fashion from picked contritubtors.</p>
+            </div>
+          </div>
+          <div className='join-ad'>
+            <p> Contact us to be a contributor.</p>
+          </div>
+
+          <div className='join-buttons'>
+            <div>
+              <span className='signin-button' onClick={this.showLogin}>sign in</span>
+            </div>
+            <div>
+              <span className='signup-button' onClick={this.showSignUp}>sign up</span>
+            </div>
+          </div>
         </div>
         {this.props.data.signUp === false ?
           null
           :
           <div className='login-container'>
-            <RegisterForm/>
+            <RegisterForm />
           </div>
-        } 
+        }
         {
           this.props.data.login === false ?
-          null
-          :
-          <div className='login-container'>
-            <LoginForm/>
-          </div>
+            null
+            :
+            <div className='login-container'>
+              <LoginForm />
+            </div>
         }
       </div>
     );

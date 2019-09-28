@@ -1,5 +1,28 @@
+.register-container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr;
+    padding: 1em;
+}
+
+.register-submit-container{
+    grid-row: 3;
+}
+
+.register-sub-container{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+
+
 .field-label{
     font-weight: bold;
+    opacity: .4;
+}
+
+.field-label-container{
+    margin-bottom: 1em;
 }
 
 .submit-button{
@@ -8,6 +31,9 @@
     background-color: black;
     color: white;
     transition: 1s;
+    height: 4em; width: 12em;
+    border-radius: 30px;
+
 }
 .submit-button:hover{
     background-color: white;
@@ -16,10 +42,34 @@
 }
 
 .register-input{
-    height: 2em;
-    margin-left: 2em;
+    width: 40vw;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid  rgba(206, 206, 206, 0.664);
+    font-size: 1em;
+}
+
+.register-input::placeholder{
+    vertical-align: top;
+    opacity: .3; 
+}
+
+.register-input:focus{
+    outline:none;
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .form-field{
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field-sub{
+    display: block;
+}
+
+.register-submit-container{
+    display: flex;
+    justify-content: center;
 }

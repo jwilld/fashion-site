@@ -25,6 +25,7 @@ export const user_creator = user => {
     return function (dispatch, getState) {
         return axios.post('https://fashion-api2.herokuapp.com/register.php', user)
             .then(data => {
+                console.log(data.status)
             })
             .then(dispatch(user_accepted(user)))
             .catch(e => dispatch(user_rejected()));
