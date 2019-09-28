@@ -1,7 +1,14 @@
 .login-container{
     height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+
+.login-server-response{
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .login-form{
@@ -15,6 +22,7 @@
 }
 
 .login-submit-container{
+    margin-top: .5em;
     grid-row: 3;
     display:flex;
     justify-content: center;

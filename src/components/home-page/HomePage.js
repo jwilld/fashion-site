@@ -10,37 +10,37 @@ class HomePage extends Component {
   render() {
     return (
       <div className="home-page">
-
-        {
+        {/* {
           this.props.data.isLoggedIn === false ?
           <Redirect to ='/'/>
           :
           null
-        }
-        <div className="top-container">
-          <div className="homepage-title">
-            <Link to='/' className='title-nav-text'>
-              <h2 className='website-title-text'>trnd</h2>
-            </Link>
-          </div>
-          <div className="nav-container">
-            <Nav />
+        } */}
+        <div className='home-title'>
+          <div className='home-title-text'>
+            <span>trnd</span>
           </div>
         </div>
-        <div className="trnd-container">
-          <TrndDisplay className='trnd-grid'/>
+        <div className='trnd-display-container'>
+          <TrndDisplay />
         </div>
-            <Post className='post-form'/>
+        <div className='nav-container'>
+          <Nav/>
         </div>
-        );
-      }
-    }
-    
-    
-    
+        <div className='post-container'>
+          <Post/>
+        </div>
+
+      </div>
+    );
+  }
+}
+
+
+
 const mapStateToProps = state => {
   return {
-          data: state
-      };
-    };
-    export default connect(mapStateToProps)(HomePage)
+    data: state
+  };
+};
+export default connect(mapStateToProps)(HomePage)

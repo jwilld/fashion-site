@@ -8,6 +8,7 @@ const initialState = {
     isRegistered: false,
     signUp: false,
     login: false,
+    loginStart:false,
     showAccess: false,
     postSent: false,
     postError: false,
@@ -19,7 +20,7 @@ const initialState = {
     postFetching: false,
     postFetched: false,
     postFetchError: false,
-    userFirstName:'',
+    userFirstName:'John',
 };
 
 
@@ -72,12 +73,14 @@ const asyncReducer = (state = initialState, action) => {
         case "LOGIN_SUCCESS":
             return Object.assign({}, state, {
                 isLoggedIn: true,
+                loginStart: false,
                 userFirstName:action.name
             })
 
         case "LOGIN_FAILURE":
             return Object.assign({}, state, {
                 isLoggedIn: false,
+                loginStart: true
                 // isRegistered: false
             })
         case "SEND_POST":

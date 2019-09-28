@@ -1,32 +1,24 @@
 .nav{
+    height: 100%;
+    width: 100%;
     display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 
-.home-button{
-    grid-row: 1;
-    grid-column: 2;
-}
 .username{
     grid-row: 1;
-    grid-column: 2;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
 
-/* .temp-nav-one{
+.sign-out{
     grid-row: 2;
-    grid-column: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
+    font-weight: bold;
 }
-.temp-nav-two{
-    grid-row: 2;
-    grid-column: 3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-} */
+
+

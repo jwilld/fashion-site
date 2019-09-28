@@ -1,17 +1,37 @@
-.post-container {
-    text-align: center;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
 
-.post-input {
-    height: 2em;
-    margin-left: 2em;
-}
-
-.posst-form-container{
+.post-form-container{
     display: flex;
     justify-content: center;
 }
-.post-form{
-    text-align: right;
+
+.post-input {
+    border: none;
+    border-bottom: 2px solid  rgba(206, 206, 206, 0.664);
+    background: transparent;
+    width: 20em;
 }
+
+.post-input:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.submit-post{
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    transition: 1s;
+}
+
+.submit-post:hover{
+    background-color: white;
+    color: black;
+    transition: 1s;
+}
+.post-field-label{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgba(206, 206, 206, 0.664);
+}
+

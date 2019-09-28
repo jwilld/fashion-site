@@ -40,6 +40,7 @@
     padding: .2em;
     margin-left: 1em;
     border: 2px solid white;
+    transition: 1s;
 }
 .signup-button:hover{
     border: 2px solid black;

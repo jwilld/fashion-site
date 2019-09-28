@@ -20,7 +20,6 @@ class LoginForm extends Component {
     }
 
     render() {
-        console.log(this.props.data)
         const loginFields = this.props.data.loginFields;
         let loginForm = loginFields.map((field, i) => (
             <div key={i} className='form-field'>
@@ -45,7 +44,9 @@ class LoginForm extends Component {
                     </div>
                     </form>
                 </div>
+                <div className='login-server-response'>
                 <ServerResponse/>
+                </div>
 
             </div>
         )

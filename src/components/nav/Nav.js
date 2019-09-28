@@ -8,7 +8,10 @@ class Nav extends Component {
   return(
     <div className="nav">
       <div className="username">
-        <h2>{this.props.data.userFirstName}</h2>
+        <span>{this.props.data.userFirstName}</span>
+      </div>
+      <div className='sign-out'>
+        <span>Sign Out</span>
       </div>
     </div>
     );
