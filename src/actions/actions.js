@@ -59,6 +59,7 @@ export const login_user = user => {
     return function (dispatch, getState) {
         return axios.post('https://fashion-api2.herokuapp.com/login.php', user)
             .then(response => {
+                console.log(response)
                 if (response.data.message === 'Successful login.') {
                     dispatch(login_success(response.data.firstname))
                 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Login.css'
 import { connect } from 'react-redux'
 import { login_user } from '../../actions/actions'
+import ServerResponse from '../server-response/ServerResponse'
 
 
 class LoginForm extends Component {
@@ -19,6 +20,7 @@ class LoginForm extends Component {
     }
 
     render() {
+        console.log(this.props.data)
         const loginFields = this.props.data.loginFields;
         let loginForm = loginFields.map((field, i) => (
             <div key={i} className='form-field'>
@@ -38,11 +40,12 @@ class LoginForm extends Component {
                         <div className='login-form-container'>
                             {loginForm}
                         </div>
-                    </form>
                     <div className='login-submit-container'>
                         <input className='submit-button' type='submit' />
                     </div>
+                    </form>
                 </div>
+                <ServerResponse/>
 
             </div>
         )

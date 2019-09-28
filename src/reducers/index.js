@@ -77,7 +77,8 @@ const asyncReducer = (state = initialState, action) => {
 
         case "LOGIN_FAILURE":
             return Object.assign({}, state, {
-                isLoggedIn: false
+                isLoggedIn: false,
+                // isRegistered: false
             })
         case "SEND_POST":
             return Object.assign({}, state, {
