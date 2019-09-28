@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import LoginForm from "../acccess-forms/Login"
 import { connect } from 'react-redux';
@@ -34,7 +33,7 @@ class LandingPage extends Component {
 
           <div className='trnd-description'>
             <div>
-              <p>TRND is a fashion swebsite that catches the latest fashion from picked contritubtors.</p>
+              <p>TRND is a fashion website that catches the latest fashion from picked contritubtors.</p>
             </div>
           </div>
           <div className='join-ad'>

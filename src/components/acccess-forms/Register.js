@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Register.css';
 import { connect } from 'react-redux';
 import { user_creator } from "../../actions/actions"
+import ServerResponse from '../server-response/ServerResponse'
 
 class RegisterForm extends Component {
     s
@@ -37,6 +38,9 @@ class RegisterForm extends Component {
                 <div onSubmit={this.handleSubmit}>
                     <form id='register-form'>
                         <div className='register-container'>
+                            <div className='server-response'>
+                                <ServerResponse />
+                            </div>
                             <div className='register-sub-container'>
                                 {/* {form} */}
                                 <div className=' form-field'>

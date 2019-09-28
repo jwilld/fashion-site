@@ -5,6 +5,13 @@
     padding: 1em;
 }
 
+.server-response{
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .register-submit-container{
     grid-row: 3;
 }
@@ -41,6 +48,11 @@
     color: black;
 }
 
+.submit-button:focus{
+    outline: none;
+
+}
+
 .register-input{
     width: 40vw;
     border: none;
@@ -73,3 +85,4 @@
     display: flex;
     justify-content: center;
 }
+

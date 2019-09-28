@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Login.css'
 import { connect } from 'react-redux'
 import { login_user } from '../../actions/actions'
-import { Link } from 'react-router-dom'
 
 
 class LoginForm extends Component {
@@ -12,30 +11,38 @@ class LoginForm extends Component {
         e.preventDefault();
         let form = new FormData(e.target)
         let loginCred = {}
-        loginFields.forEach(field => 
+        loginFields.forEach(field =>
             loginCred[field] = form.get(field))
         this.props.dispatch(login_user(loginCred));
         document.getElementById('login-form').reset();
-        
+
     }
 
     render() {
         const loginFields = this.props.data.loginFields;
-        let loginForm = loginFields.map((field, i ) => (
+        let loginForm = loginFields.map((field, i) => (
             <div key={i} className='form-field'>
-                <span className='field-label'>{field}</span>
-                <input className='register-input' name={field}></input>
+                <div className='form-field-sub'>
+                    <div className='field-label-container'>
+                        <span className='field-label'>{field}</span>
+                    </div>
+                    <input className='register-input' name={field}></input>
+
+                </div>
             </div>
         ))
         return (
-            <div onSubmit={this.handleSubmit}>
-                <form id='login-form'>
-                    {loginForm}
-                    <input className='submit-button' type='submit'/>
-                </form>
-                <Link  className='go-home' to='/home'>
-                    Go to home page
-                </Link>
+            <div className='login-container' onSubmit={this.handleSubmit}>
+                <div className='login-form' >
+                    <form id='login-form'>
+                        <div className='login-form-container'>
+                            {loginForm}
+                        </div>
+                    </form>
+                    <div className='login-submit-container'>
+                        <input className='submit-button' type='submit' />
+                    </div>
+                </div>
 
             </div>
         )

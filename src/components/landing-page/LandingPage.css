@@ -27,11 +27,25 @@
     padding: .2em;
     margin-right: 1em;
     border: 2px solid white;
+    transition: 1s;
 }
+.signin-button:hover{
+    border: 2px solid black;
+    transition: 1s;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
 .signup-button{
     padding: .2em;
     margin-left: 1em;
     border: 2px solid white;
+}
+.signup-button:hover{
+    border: 2px solid black;
+    transition: 1s;
+    color: white;
+    background-color: rgb(0, 0, 0);
 }
 .join-ad{
     grid-row:3;
