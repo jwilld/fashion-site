@@ -12,6 +12,9 @@
     align-items: center;
     font-weight: bold;
 }
+.user-icon{
+    font-size: 1.3em;
+}
 
 .sign-out{
     grid-row: 2;
@@ -19,6 +22,10 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+.sign-out-icon{
+    font-size: 1.3em;
 }
 
 

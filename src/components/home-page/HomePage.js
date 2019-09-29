@@ -5,8 +5,21 @@ import "./HomePage.css";
 import TrndDisplay from "../trnd-display/TrndDisplay";
 import { connect } from 'react-redux';
 import Post from '../post/Post'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class HomePage extends Component {
+  constructor(){
+    super();
+    this.state = {
+      postPlus:false
+    }
+  }
+
+  addPost = () => (
+      this.setState({postPlus:!this.state.postPlus})
+
+  )
+
   render() {
     return (
       <div className="home-page">
@@ -25,10 +38,25 @@ class HomePage extends Component {
           <TrndDisplay />
         </div>
         <div className='nav-container'>
-          <Nav/>
+          <Nav />
         </div>
-        <div className='post-container'>
-          <Post/>
+        <div className='bottom-box'>
+          <div className='post-container'>
+            {this.state.postPlus === true ?
+            <Post />
+            :
+            null
+            }
+          </div>
+          <div className='post-icons-container'>
+            <div className='post-icons'>
+            { this.state.postPlus === false ?
+            <FontAwesomeIcon onClick ={this.addPost} className='add-post-icon' icon='plus-square' />
+            :
+            <FontAwesomeIcon onClick={this.addPost}  className='minimize-icon' icon='window-minimize' />
+            }
+            </div>
+          </div>
         </div>
 
       </div>

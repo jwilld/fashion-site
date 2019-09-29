@@ -109,7 +109,10 @@ export const make_post = post => {
         return axios.post('https://fashion-api2.herokuapp.com/post.php', post)
             .then(response => {
                 if (response.data.message === 'post success') {
-                    dispatch(post_accepted())
+                    dispatch(post_accepted(),
+                    get_posts()
+                    )
+                    
                 }
                 else {
                     dispatch(post_denied())
