@@ -150,5 +150,10 @@ export const get_posts = () => {
     }
 }
 
+export const display_post = () => {
+    return{
+        type:"DISPLAY_POST"
+    }
+}
 
 

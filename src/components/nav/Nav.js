@@ -2,9 +2,28 @@ import React, { Component } from "react";
 import "./Nav.css";
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { display_post } from '../../actions/actions'
 
 
 class Nav extends Component {
+  constructor(){
+    super();
+    this.state = {
+      postPlus:false
+    }
+  }
+
+  
+  addPost = () => (
+    this.setState({postPlus:!this.state.postPlus})
+    
+    )
+    
+    displayPost = () => {
+      this.props.dispatch(display_post())
+      this.addPost()
+    }
+
   render() {
     return (
       <div className="nav">
@@ -20,6 +39,19 @@ class Nav extends Component {
           </div>
           <span>Sign Out</span>
         </div>
+        <div className='post-picture'>
+
+        { this.state.postPlus === false ?
+        <div>
+          <FontAwesomeIcon onClick={this.displayPost} className='add-post-icon' icon='plus-square' />
+        </div>
+            :
+        <div>
+          <FontAwesomeIcon onClick={this.displayPost} className='minimize-icon' icon='window-minimize' />
+        </div>
+            }
+        </div>
+
       </div>
     );
   }

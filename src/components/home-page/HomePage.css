@@ -13,7 +13,7 @@
 }
 
 .post-container{
-    grid-column: 1;
+    grid-column: 2;
 }
 .post-icons-container{
     grid-row: 1;
@@ -53,4 +53,23 @@
     grid-row: 1/5;
     grid-column: 1;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.post-container{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+
+}
+
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

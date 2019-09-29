@@ -21,6 +21,7 @@ const initialState = {
     postFetched: false,
     postFetchError: false,
     userFirstName:'John',
+    displayPost: false,
 };
 
 
@@ -121,6 +122,11 @@ const asyncReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 postFetching: false,
                 postFetchError: true
+            })
+        }
+        case "DISPLAY_POST":{
+            return Object.assign({}, state , {
+                displayPost:!state.displayPost
             })
         }
         default:
