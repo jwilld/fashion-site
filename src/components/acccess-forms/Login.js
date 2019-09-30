@@ -22,15 +22,26 @@ class LoginForm extends Component {
     render() {
         const loginFields = this.props.data.loginFields;
         let loginForm = loginFields.map((field, i) => (
-            <div key={i} className='form-field'>
-                <div className='form-field-sub'>
-                    <div className='field-label-container'>
-                        <span className='field-label'>{field}</span>
-                    </div>
-                    <input className='register-input' name={field}></input>
+            field === 'password' ?
+                <div key={i} className='form-field'>
+                    <div className='form-field-sub'>
+                        <div className='field-label-container'>
+                            <span className='field-label'>{field}</span>
+                        </div>
+                        <input type='password' className='register-input' name={field}></input>
 
+                    </div>
                 </div>
-            </div>
+                :
+                <div key={i} className='form-field'>
+                    <div className='form-field-sub'>
+                        <div className='field-label-container'>
+                            <span className='field-label'>{field}</span>
+                        </div>
+                        <input className='register-input' name={field}></input>
+
+                    </div>
+                </div>
         ))
         return (
             <div className='login-container' onSubmit={this.handleSubmit}>
@@ -39,13 +50,13 @@ class LoginForm extends Component {
                         <div className='login-form-container'>
                             {loginForm}
                         </div>
-                    <div className='login-submit-container'>
-                        <input className='submit-button' type='submit' />
-                    </div>
+                        <div className='login-submit-container'>
+                            <input className='submit-button' type='submit' />
+                        </div>
                     </form>
                 </div>
                 <div className='login-server-response'>
-                <ServerResponse/>
+                    <ServerResponse />
                 </div>
 
             </div>
