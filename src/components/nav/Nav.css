@@ -14,6 +14,7 @@
 }
 .user-icon{
     font-size: 1.3em;
+    margin-right: .2em;
 }
 .post-picture{
     grid-row: 2;
@@ -43,6 +44,7 @@
 
 .sign-out-icon{
     font-size: 1.3em;
+    margin-right: .2em;
 }
 
 .sign-out-icon{
@@ -53,6 +55,18 @@
     color: grey;
     transition: .5s;
 
+}
+
+
+.add-post-icon:hover{
+    transition: .5s;
+    color: grey;
+}
+
+
+.minimize-icon:hover{
+    transition:.5s;
+    color: grey;
 }
 
 

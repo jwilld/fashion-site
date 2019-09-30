@@ -144,7 +144,6 @@ export const get_posts = () => {
         return axios.get('https://fashion-api2.herokuapp.com/getPosts.php')
             .then(response => {
                 dispatch(get_images_success(response))
-                
             })
             .catch(dispatch(get_images_fail()));
     }
@@ -153,6 +152,12 @@ export const get_posts = () => {
 export const display_post = () => {
     return{
         type:"DISPLAY_POST"
+    }
+}
+
+export const sign_out = () => {
+    return {
+        type: "SIGN_OUT"
     }
 }
 

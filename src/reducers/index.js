@@ -16,12 +16,13 @@ const initialState = {
     formFields: ['first_name', 'last_name', 'email', 'password'],
     loginFields: ['email','password'],
     postFields: ['title','photographer','photo','area'],
-    posts:[{photo:'default'}],
+    posts:[{photo:'loading...'}],
     postFetching: false,
     postFetched: false,
     postFetchError: false,
     userFirstName:'John',
     displayPost: false,
+    gotPosts:false
 };
 
 
@@ -58,7 +59,8 @@ const asyncReducer = (state = initialState, action) => {
         case "LOGIN_BOOL":
             return Object.assign({}, state, {
                 login: !state.login,
-                signUp: false
+                signUp: false,
+                isRegistered: false,
             })
         case "SHOW_ACCESS":
             return Object.assign({}, state, {
@@ -108,14 +110,15 @@ const asyncReducer = (state = initialState, action) => {
 
         case "GET_START":{
             return Object.assign({}, state, {
-                postFetching: true
+                postFetching: true,
             })
         }
         case "GET_SUCCESS":{
             return Object.assign({}, state, {
                 postFetching: false,
                 postFetched: true,
-                posts: action.posts.data
+                posts: action.posts.data,
+                gotPosts: true
             })
         }
         case "GET_FAIL":{
@@ -128,6 +131,11 @@ const asyncReducer = (state = initialState, action) => {
             return Object.assign({}, state , {
                 displayPost:!state.displayPost
             })
+        }
+        case "SIGN_OUT": {
+            return Object.assign({}, state, {
+                isLoggedIn: false
+            } )
         }
         default:
             return state;
