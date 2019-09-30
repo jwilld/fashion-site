@@ -69,6 +69,30 @@
     color: grey;
 }
 
+@media only screen and (max-width:760px) {
+      .nav{
+          grid-template-rows: 1fr 2fr;
+          grid-template-columns: repeat( 3,1fr);
+      }
+      .sign-out-text{
+          display: none;
+      }
+      .post-picture{
+          grid-row: 1;
+          grid-column: 2;
+      }
+      .sign-out{
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .username{
+          grid-column: 1;
+          grid-row:1;
+      }
+
+}
+
 
 
 

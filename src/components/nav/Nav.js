@@ -41,7 +41,7 @@ class Nav extends Component {
           <div>
             <FontAwesomeIcon onClick = {this.signOut} className='sign-out-icon' icon='sign-out-alt' />
           </div>
-          <span>Sign Out</span>
+          <span className='sign-out-text'>Sign Out</span>
         </div>
         <div className='post-picture'>
 

@@ -45,6 +45,9 @@
     overflow: hidden scroll;
     scroll-behavior: smooth;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: center;
+
 }
 
 .nav-container{
@@ -103,3 +106,19 @@
     50%  { opacity:0; }
     100% { opacity:1; }
   }
+
+
+  @media only screen and (max-width:760px) {
+      .nav-container{
+          grid-row: 4;
+          grid-column: 1/3;
+      }
+      
+      .trnd-display-container{
+          grid-column: 1/3;
+      }
+      .home-title{
+          grid-column: 1/3;
+      }
+
+}
