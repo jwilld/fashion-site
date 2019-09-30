@@ -24,7 +24,6 @@ class LandingPage extends Component {
     return (
       <div className="landing-container">
         <div className="website-background">
-
           <div className='trnd-title'>
             <div>
               <span>trnd</span>

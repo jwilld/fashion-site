@@ -34,15 +34,15 @@
 
 .submit-button{
     font-weight: bold;
-    border: 2px solid black;
     background-color: black;
     color: white;
     transition: 1s;
     height: 3em; width: 12em;
-    border-radius: 30px;
+    border: none;
 
 }
 .submit-button:hover{
+    border: 2px solid black;
     background-color: white;
     transition: 1s;
     color: black;

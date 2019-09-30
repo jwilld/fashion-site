@@ -3,10 +3,12 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(3,1fr);
 }
 
 .website-background{
-    grid-row: 1;
+    grid-row: 1/4;
+    grid-column: 1;
     background-image: url('https://images.unsplash.com/photo-1500629723675-4d6b0685936a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80');
     background-size: cover;
     background-position: center;
