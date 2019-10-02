@@ -7,6 +7,7 @@ import ServerResponse from '../server-response/ServerResponse'
 
 class LoginForm extends Component {
 
+
     handleSubmit = e => {
         const loginFields = this.props.data.loginFields
         e.preventDefault();
@@ -14,7 +15,15 @@ class LoginForm extends Component {
         let loginCred = {}
         loginFields.forEach(field =>
             loginCred[field] = form.get(field))
-        this.props.dispatch(login_user(loginCred));
+        // email is split to individual characterss to check for '@' symbol
+        let emailCheck = loginCred.email.split('')
+        // if the email and password are valied then the login_user function runs
+        if(emailCheck.includes('@') && (loginCred.password !== undefined || null)){
+            this.props.dispatch(login_user(loginCred));
+        }
+        else{
+            alert('invalid email or password try again')
+        }
         document.getElementById('login-form').reset();
 
     }

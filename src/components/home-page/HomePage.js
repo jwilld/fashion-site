@@ -15,12 +15,12 @@ class HomePage extends Component {
     console.log(this.props.data.gotPosts)
     return (
       <div className="home-page">
-        {/* {
+        {
           this.props.data.isLoggedIn === false ?
           <Redirect to ='/'/>
           :
           null
-        } */}
+        }
         <div className='home-title'>
           <div className='home-title-text'>
             <span>trnd</span>

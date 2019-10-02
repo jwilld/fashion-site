@@ -12,7 +12,18 @@ class RegisterForm extends Component {
         let form = new FormData(e.target)
         let newUser = {}
         this.props.data.formFields.forEach(field => newUser[field] = form.get(field))
+        let emailCheck = newUser.email.split('')
+        if((newUser.password !== '') && 
+             (newUser.first_name !== '') &&
+            ( newUser.last_name !== '') &&
+            ( newUser.passsword !== '') &&
+            (emailCheck.includes('@'))
+             ){
         this.props.dispatch(user_creator(newUser));
+             }
+             else{
+                 alert('One or more of the sign up fields are invalid')
+             }
         document.getElementById('register-form').reset();
 
 
